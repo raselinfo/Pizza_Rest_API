@@ -17,3 +17,11 @@
     store in database
     generate jwt token
     send response
+
+**Login a user
+    validate the request
+    authorize the request
+    check if user is in the database already
+    compare password
+    generate jwt token and save the refresh token in the database
+    send response
