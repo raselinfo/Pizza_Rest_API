@@ -22,7 +22,7 @@ export const registrationController = async (req, res, next) => {
     } catch (err) {
         return next(err)
     }
-    // let hashedPassword
+    let hashedPassword
     try {
         let { password } = await Password.hasPassword(req.body.password)
         hashedPassword = password
