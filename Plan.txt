@@ -25,3 +25,11 @@
     compare password
     generate jwt token and save the refresh token in the database
     send response
+**Who am I (Authenticate User can see his details so make an middleware)
+    *Auth middleware
+        Validate the Refresh token
+        bind the user id with req object
+    *user api
+        find the user in the database using user id
+        send the user details to the client
+        

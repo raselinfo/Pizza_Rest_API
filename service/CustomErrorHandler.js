@@ -14,6 +14,10 @@ class CustomErrorHandler extends Error {
     static unauthorized(message = "unauthorized", status = 401) {
         return new CustomErrorHandler(status, message)
     }
+    static notfound(message = "Not Found", status = 404) {
+        return new CustomErrorHandler(status, message)
+    }
+
 }
 
 
