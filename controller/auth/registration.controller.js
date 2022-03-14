@@ -56,8 +56,8 @@ export const registrationController = async (req, res, next) => {
         access_token = await JWT.sign({ _id: user._id, role: user.role })
         refresh_token = await JWT.sign({ _id: user._id, role: user.role }, "1y", JWT_REFRESH_SECRET)
         try {
-            let token = await RefreshModel.create({ token: refresh_token })
-            console.log(token)
+            await RefreshModel.create({ token: refresh_token })
+
         } catch (err) {
             return next(err)
         }

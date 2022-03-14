@@ -6,14 +6,21 @@ class Password {
     }
 
     static async hasPassword(password) {
-       try{
-           let hasPassword = await bcrypt.hash(password, 10)
-           return new Password(hasPassword)
-       }catch(err){
-           console.log("Error",err.message)
-       }
+        try {
+            let hasPassword = await bcrypt.hash(password, 10)
+            return new Password(hasPassword)
+        } catch (err) {
+            console.log("Error", err.message)
+        }
+    }
 
-   
+    static async compare(requestedPassword, userPassword) {
+        try {
+            let match = await bcrypt.compare(requestedPassword, userPassword)
+            return match
+        } catch (err) {
+            console.log("Error", err.message)
+        }
     }
 }
 

@@ -5,10 +5,15 @@ class CustomErrorHandler extends Error {
         this.message = message
     }
 
-    static alreadyExists(message, stats = 409){
-        return new CustomErrorHandler(stats,message)
+    static alreadyExists(message, status = 409) {
+        return new CustomErrorHandler(status, message)
     }
-
+    static wrongCredentials(message = "Wrong Credential", status = 401) {
+        return new CustomErrorHandler(status, message)
+    }
+    static unauthorized(message = "unauthorized", status = 401) {
+        return new CustomErrorHandler(status, message)
+    }
 }
 
 
