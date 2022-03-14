@@ -1,5 +1,6 @@
 import Joi from "joi"
 import UserModel from "../../model/auth/User.model"
+import Password from "../../util/Password"
 import CustomErrorHandler from "../../service/CustomErrorHandler"
 export const registrationController = async (req, res, next) => {
     const registarSchema = Joi.object({
@@ -12,10 +13,22 @@ export const registrationController = async (req, res, next) => {
     if (error) {
         return next(error)
     }
+    // 
     try {
-        let exist = await UserModel.exists({ email: req.email })
-        console.log(exist)
+        let exists = await UserModel.exists({ email: req.email })
+        if (exists) {
+            return next(CustomErrorHandler.alreadyExists("User Already Exists"))
+        }
     } catch (err) {
         return next(err)
     }
+    // let hashedPassword
+    try {
+        let { password } = await Password.hasPassword(req.body.password)
+        hashedPassword = password
+    } catch (err) {
+        return next(err)
+    }
+
+
 }

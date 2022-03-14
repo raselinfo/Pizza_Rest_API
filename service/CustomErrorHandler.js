@@ -5,6 +5,10 @@ class CustomErrorHandler extends Error {
         this.message = message
     }
 
+    static alreadyExists(message, stats = 409){
+        return new CustomErrorHandler(stats,message)
+    }
+
 }
 
 
