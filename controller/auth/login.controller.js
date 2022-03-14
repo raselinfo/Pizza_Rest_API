@@ -1,4 +1,5 @@
 import Joi from "joi"
+import RefreshModel from "../../model/auth/RefreshToken.model"
 import JWT from "../../service/Jwt"
 import UserModel from "../../model/auth/User.model"
 import CustomErrorHandler from "../../service/CustomErrorHandler"
@@ -41,10 +42,12 @@ export const loginController = async (req, res, next) => {
     } catch (err) {
         return next(err)
     }
-
-    // Save Refresh Token in 
-
+    // Save Refresh Token in Database
+    try {
+        await RefreshModel.create({ token: refresh__token })
+    } catch (err) {
+        return next(err)
+    }
+    // Send Response
     res.json({ access__token, refresh__token })
-
-
 }
