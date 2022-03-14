@@ -1,0 +1,19 @@
+[+] Register a user
+[+] Login a user
+[+] Who am I
+[+] Refresh the token
+[+] Logout the user
+[+] Add new product
+[+] Update a product
+[+] Get all products
+[+] Get single product
+[+] Delete a product
+
+**Register a user
+    validate the request
+    authorize the request
+    check if user is in the database already
+    prepare model
+    store in database
+    generate jwt token
+    send response
