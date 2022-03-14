@@ -11,5 +11,6 @@ export const userController = async (req, res, next) => {
     } catch (err) {
         return next(err)
     }
+    // Send Response
     res.json(user)
 }
