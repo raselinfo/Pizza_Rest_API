@@ -2,6 +2,7 @@ import registerRouter from "./auth/registration.routes"
 import loginRouter from "./auth/login.routes"
 import userRouter from "./user/user.routes"
 import refreshRouter from "./refresh/refresh.routes"
+import logoutRouter from "./auth/logout.routes"
 const routes = [
     {
         path: "/",
@@ -20,6 +21,9 @@ const routes = [
     }, {
         path: "/api",
         handler: refreshRouter
+    }, {
+        path: "/api",
+        handler: logoutRouter
     }
 ]
 
