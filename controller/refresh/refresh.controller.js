@@ -39,10 +39,19 @@ export const refreshController = async (req, res, next) => {
         if (!user) {
             return next(CustomErrorHandler.notfound("User Not Found"))
         }
+        // Todo:  Generate the Access and Refresh Token
         access_token = await JWT.sign({ _id: user.id, role: user.role })
-        refresh_token = await JWT.sign({ _id: user.id, role: user.role },"1y",JWT_REFRESH_SECRET)
-        
+        refresh_token = await JWT.sign({ _id: user.id, role: user.role }, "1y", JWT_REFRESH_SECRET)
+        // Todo: Save the Refresh token to the database
+        try {
+            await RefreshModel.create({ token: refresh_token })
+        } catch (err) {
+            return next(err)
+        }
     } catch (err) {
         return next(CustomErrorHandler.notfound("User Not Found"))
     }
+
+    // Todo: send the response
+    res.json({ access_token, refresh_token })
 }
