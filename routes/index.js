@@ -1,6 +1,7 @@
 import registerRouter from "./auth/registration.routes"
 import loginRouter from "./auth/login.routes"
 import userRouter from "./user/user.routes"
+import refreshRouter from "./refresh/refresh.routes"
 const routes = [
     {
         path: "/",
@@ -13,9 +14,12 @@ const routes = [
     }, {
         path: "/api",
         handler: loginRouter
-    },, {
+    }, {
         path: "/api",
         handler: userRouter
+    }, {
+        path: "/api",
+        handler: refreshRouter
     }
 ]
 

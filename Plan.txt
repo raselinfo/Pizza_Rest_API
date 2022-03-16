@@ -1,3 +1,4 @@
+TODO:
 [+] Register a user
 [+] Login a user
 [+] Who am I
@@ -33,3 +34,4 @@
         find the user in the database using user id
         send the user details to the client
         
+**Refresh the token
