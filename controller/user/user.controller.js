@@ -1,4 +1,4 @@
-import UserModel from "../../model/auth/User.model"
+import UserModel from "../../model/user/User.model"
 import CustomErrorHandler from "../../service/CustomErrorHandler"
 export const userController = async (req, res, next) => {
     let user

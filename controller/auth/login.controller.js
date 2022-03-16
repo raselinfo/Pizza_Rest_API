@@ -1,7 +1,7 @@
 import Joi from "joi"
 import RefreshModel from "../../model/auth/RefreshToken.model"
 import JWT from "../../service/Jwt"
-import UserModel from "../../model/auth/User.model"
+import UserModel from "../../model/user/User.model"
 import CustomErrorHandler from "../../service/CustomErrorHandler"
 import Password from "../../util/Password"
 import { JWT_REFRESH_SECRET } from "../../config"
