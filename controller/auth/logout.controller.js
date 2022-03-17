@@ -30,7 +30,6 @@ export const logoutController = async (req, res, next) => {
     }
 
     // Todo: send the response
-
     return res.json({ status: 1 })
 
 }
