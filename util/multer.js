@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
 const checkFileType = (file, cb) => {
     const fileType = /jpg|jpeg|png/
     const extname = fileType.test(path.extname(file.originalname).toLocaleLowerCase())
-    const mimeType = fileType.test(file.mimeType)
+    const mimeType = fileType.test(file.mimetype.toLocaleLowerCase())
     if (extname && mimeType) {
         return cb(null, true)
     }
@@ -30,7 +30,7 @@ const handeldUpload = multer({
     fileFilter(req, file, cb) {
         checkFileType(file, cb)
     }
-})
+}).single("image")
 
 
 export default handeldUpload
