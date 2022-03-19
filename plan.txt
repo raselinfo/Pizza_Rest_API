@@ -5,7 +5,7 @@ TODO:
 [+] Refresh the token
 [+] Logout the user
 [+] Add new product
-[-] Update a product
+[+] Update a product
 [-] Get all products
 [-] Get single product
 [-] Delete a product
@@ -55,5 +55,6 @@ TODO:
     
 **Update a product (only admin can update product)
     validate the user data
-    update the user data in the database
-    
+    find the product and update the product property
+
+**Get all products (all authorize user can get the products )

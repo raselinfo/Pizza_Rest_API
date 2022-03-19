@@ -1,5 +1,4 @@
-import Joi from "joi"
-import fs from "fs"
+import validate from "../../validator/validator"
 import ProductModel from "../../model/product/product.model"
 import handeldUpload from "../../util/multer"
 export const addProductController = (req, res, next) => {
@@ -14,22 +13,7 @@ export const addProductController = (req, res, next) => {
         }
         let filePath = req.file.path
         // Todo: validate the body data
-        let productValidate = Joi.object({
-            name: Joi.string().required(),
-            price: Joi.string().required(),
-            size: Joi.string().required(),
-            image: Joi.string()
-        })
-        let { error } = productValidate.validate(req.body)
-        // Todo: Delete the file if Error
-        if (error) {
-            fs.unlink(`${app_root}/${filePath}`, (err) => {
-                if (err) {
-                    return next(err)
-                }
-            })
-            return next(error)
-        }
+        validate({data:req.body,filePath},next)
         // Todo: Save the image path in the database
         let product
         try {
