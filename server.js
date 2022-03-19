@@ -10,17 +10,17 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 // Todo: Global Path
-global.app_root=path.resolve(__dirname)
-// Todo:Database Connection
+global.app_root = path.resolve(__dirname)
+// Todo: Database Connection
 async function db() {
-    
+
     try {
         const connect = await mongoose.connect(DB_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         })
         console.log(colors.inverse(`DB Connected At= ${connect.connection.host}`.brightYellow))
-    } catch (err) {        
+    } catch (err) {
         console.log(`DB Error= ${err.message}`.brightRed)
         process.exit();
     }
@@ -29,7 +29,8 @@ async function db() {
 
 // All App Routes
 getAllRoutes(app)
-
+// Public Folder
+app.use("/public", express.static("public"))
 
 app.use(errorHanddleMiddlewar)
 // App Listen

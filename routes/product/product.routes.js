@@ -1,5 +1,6 @@
 import express from "express";
 import { addProductController } from "../../controller/product/addProduct.controller";
+import { deleteProductController } from "../../controller/product/deleteProduct.controller";
 import { getAllProducts } from "../../controller/product/getAllProducts.controller";
 import { getSingleProduct } from "../../controller/product/getSingleProduct.controller";
 import { updateProductController } from "../../controller/product/updateProduct.controller";
@@ -16,6 +17,8 @@ router.get("/product/:id", authMiddleware, isUserMiddleware, getSingleProduct)
 router.post("/product", [authMiddleware, isAdminMiddleware], addProductController)
 // Todo: Update Product
 router.patch("/product/:id", [authMiddleware, isAdminMiddleware], updateProductController)
+// Todo: Delete Product
+router.delete("/product/:id", [authMiddleware, isAdminMiddleware], deleteProductController)
 
 
 export default router

@@ -60,5 +60,8 @@ TODO:
 **Get all products (all authorize user can get the products )
     find the all product form the database
 
-** Get single product
-    take a product params and search that product in the database
+** Get single product (all authorize user can get the products )
+    take the product id and search that product in the database
+
+**Delete a product (only admin can delete product)
+    take the product id and delete the product from the database as well delete from the file
