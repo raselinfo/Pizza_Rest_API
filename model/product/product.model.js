@@ -6,7 +6,7 @@ const productSchema = Schema({
     image: { type: String, required: true }
 }, { timestamps: true })
 
-const ProductModel = model("Product", productSchema, products)
+const ProductModel = model("Product", productSchema, 'products')
 
 export default ProductModel
 

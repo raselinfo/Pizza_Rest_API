@@ -4,7 +4,7 @@ TODO:
 [+] Who am I
 [+] Refresh the token
 [+] Logout the user
-[-] Add new product
+[+] Add new product
 [-] Update a product
 [-] Get all products
 [-] Get single product
@@ -48,8 +48,12 @@ TODO:
     verify the refresh token
     delete the refresh token from the database
 
-**Add new product (only admin can add products)
+**Add new product (only admin can add product)
     validate the request data
     use multer to handle multipart form data
     save the image file in our server and store the file path to the database
+    
+**Update a product (only admin can update product)
+    validate the user data
+    update the user data in the database
     

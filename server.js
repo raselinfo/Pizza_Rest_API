@@ -1,5 +1,6 @@
 import express from "express"
 import mongoose from "mongoose"
+import path from "path"
 import colors from "colors"
 import errorHanddleMiddlewar from "./middleware/errroHandleMiddlewar"
 import { APP_PORT, DB_URI } from "./config"
@@ -8,10 +9,9 @@ const PORT = APP_PORT || 4000
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-colors.setTheme({
-    success: "till"
-})
-// Database Connection
+// Todo: Global Path
+global.app_root=path.resolve(__dirname)
+// Todo:Database Connection
 async function db() {
     
     try {
