@@ -27,6 +27,6 @@ export const addProductController = (req, res, next) => {
             return next(error)
         }
         // Todo: Send Response
-        res.json(product)
+       return res.json(product)
     })
 }

@@ -39,7 +39,7 @@ export const updateProductController = (req, res, next) => {
             return next(CustomErrorHandler.notfound("Product doesn't found!"))
         }
         // Todo: send the response
-        res.json({ updatedProduct })
+      return  res.json({ updatedProduct })
     })
 
 }

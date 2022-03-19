@@ -6,8 +6,8 @@ TODO:
 [+] Logout the user
 [+] Add new product
 [+] Update a product
-[-] Get all products
-[-] Get single product
+[+] Get all products
+[+] Get single product
 [-] Delete a product
 
 **Register a user
@@ -58,3 +58,7 @@ TODO:
     find the product and update the product property
 
 **Get all products (all authorize user can get the products )
+    find the all product form the database
+
+** Get single product
+    take a product params and search that product in the database
