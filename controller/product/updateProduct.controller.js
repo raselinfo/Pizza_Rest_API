@@ -27,9 +27,9 @@ export const updateProductController = (req, res, next) => {
                 return next(CustomErrorHandler.notfound("Product doesn't found!"))
             }
             // Todo: delete the image file if already exists in our uploads file
-            let existFile = fs.existsSync(`${app_root}/${updatedProduct.image}`)
+            let existFile = fs.existsSync(`${app_root}/${updatedProduct._doc.image}`)
             if (filePath && existFile) {
-                fs.unlink(`${app_root}/${updatedProduct.image}`, (err) => {
+                fs.unlink(`${app_root}/${updatedProduct._doc.image}`, (err) => {
                     if (err) {
                         return next(err)
                     }
