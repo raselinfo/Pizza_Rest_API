@@ -8,7 +8,7 @@ TODO:
 [+] Update a product
 [+] Get all products
 [+] Get single product
-[-] Delete a product
+[+] Delete a product
 
 **Register a user
     validate the request
