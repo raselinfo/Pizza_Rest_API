@@ -47,3 +47,9 @@ TODO:
     validate the refresh token
     verify the refresh token
     delete the refresh token from the database
+
+**Add new product (only admin can add products)
+    validate the request data
+    use multer to handle multipart form data
+    save the image file in our server and store the file path to the database
+    
