@@ -1,6 +1,6 @@
 # Pizza REST API Plan
 ![Pizza REST API Plan](https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&w=1000&q=80)
-# `npm run dev` ==for run the server==
+# `npm run dev` for run the server
 ### TODO :
 **[x] Register a user**  
 **[x] Login a user**  
