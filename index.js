@@ -13,7 +13,6 @@ app.use(express.urlencoded({ extended: true }))
 global.app_root = path.resolve(__dirname)
 // Todo: Database Connection
 async function db() {
-
     try {
         const connect = await mongoose.connect(DB_URI, {
             useNewUrlParser: true,
