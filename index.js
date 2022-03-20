@@ -2,9 +2,9 @@ import express from "express"
 import mongoose from "mongoose"
 import path from "path"
 import colors from "colors"
-import errorHanddleMiddlewar from "./middleware/errroHandleMiddlewar.js"
-import { APP_PORT, DB_URI } from "./config/index.js"
-import getAllRoutes from "./routes/index.js"
+import errorHanddleMiddlewar from "./middleware/errroHandleMiddlewar"
+import { APP_PORT, DB_URI } from "./config"
+import getAllRoutes from "./routes"
 const PORT = APP_PORT || 4000
 const app = express()
 app.use(express.json())
