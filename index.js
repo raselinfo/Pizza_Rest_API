@@ -11,6 +11,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 // Todo: Global Path
 global.app_root = path.resolve(__dirname)
+
 // Todo: Database Connection
 async function db() {
     try {
